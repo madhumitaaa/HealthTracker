@@ -1,13 +1,18 @@
-import React from 'react'
-import './Header.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Header.css';
+
 const Header = () => {
   return (
-    <div>
-      <header id="title">
-         🩺 Health Tracker
-      </header>
-    </div>
-  )
-}
+    <header id="title">
+      🩺Health Tracker
+      <nav>
+        <Link id="entries" to="/entries">Entries  </Link>
+        <Link id="dashboard" to="/dashboard">Dashboard  </Link><br></br>
+        <Link id="logout"  to="/login">Logout</Link>
+      </nav>
+    </header>
+  );
+};
 
-export default Header
+export default Header;

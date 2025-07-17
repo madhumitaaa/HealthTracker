@@ -3,7 +3,6 @@ const Entry = require('../models/Entry');
 
 const router = express.Router();
 
-// GET all entries
 router.get('/', async (req, res) => {
   try {
     const entries = await Entry.find().sort({ date: 1 });
@@ -13,7 +12,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// POST new entry
+
 router.post('/', async (req, res) => {
   const { date, calories, sleep, workouts } = req.body;
 
@@ -22,8 +21,8 @@ router.post('/', async (req, res) => {
     calories,
     sleep,
     workouts,
-    heartRate: 72,  // default value or can be added to form
-    steps: 5000     // same here
+    heartRate: 72,  
+    steps: 5000     
   });
 
   try {
